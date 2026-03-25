@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: academy_robot_description
+    relative_path: urdf/ur_gripper.urdf.xacro
+  srdf:
+    relative_path: config/academy_robot_arm.srdf
+  package_settings:
+    author_name: Jad El hajj
+    author_email: jad.elhajj@inmind.ai
+    generated_timestamp: 1752659571
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

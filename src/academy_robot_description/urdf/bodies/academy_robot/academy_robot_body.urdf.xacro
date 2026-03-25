@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot name="academy_robot" xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:macro name="academy_robot_body" params="prefix:=robot_">
+    <!-- Robot mechanical and motor parameters -->
+    <xacro:property name="PI" value="3.1415926535897931" />
+    <xacro:property name="wheel_radius" value="0.127" />
+    <!-- BASE FOOTPRINT -->
+    <link name="${prefix}base_footprint">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.001 0.001 0.001" />
+        </geometry>
+      </visual>
+    </link>
+    <joint name="${prefix}base_footprint_joint" type="fixed">
+      <origin xyz="0 0 ${wheel_radius}" rpy="0 0 0" /> <!-- ${wheel_radius} property must be defined inside wheel description -->
+      <parent link="${prefix}base_footprint" />
+      <child link="${prefix}base_link" />
+    </joint>
+    <!-- BASE_LINK -->
+    <link name="${prefix}base_link">
+      <inertial>
+        <mass value="125.0" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="1.391" ixy="0.004" ixz="0.0" iyy="6.853" iyz="0.0" izz="6.125" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://academy_robot_description/meshes/bases/academy_robot/academy_robot_chassis.stl" />
+        </geometry>
+        <material name="black">
+          <color rgba="0.0 0.0 0.0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0 " />
+        <geometry>
+          <mesh filename="package://academy_robot_description/meshes/bases/academy_robot/academy_robot_chassis.stl" />
+        </geometry>
+      </collision>
+    </link>
+    <gazebo reference="${prefix}base_link">
+      <material>Gazebo/Black</material>
+    </gazebo>
+    <!-- TOP COVER -->
+    <link name="${prefix}top_cover">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://academy_robot_description/meshes/bases/academy_robot/academy_robot_top_cover.stl" />
+        </geometry>
+        <material name="darkgrey">
+          <color rgba="0.5 0.5 0.5 1" />
+        </material>
+      </visual>
+    </link>
+    <joint name="${prefix}top_cover_joint" type="fixed">
+      <origin xyz="0.0 0 0.38062" rpy="0 0 0" />
+      <parent link="${prefix}base_link" />
+      <child link="${prefix}top_cover" />
+    </joint>
+  
+    <!-- DOCKING CONTACT -->
+    <link name="${prefix}base_docking_contact">
+    </link>
+    <joint name="${prefix}base_docking_joint" type="fixed">
+      <origin xyz="0.35 0 0.09" rpy="0 0 0" />
+      <parent link="${prefix}base_link" />
+      <child link="${prefix}base_docking_contact" />
+    </joint>
+  </xacro:macro>
+</robot>

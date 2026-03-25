@@ -1,0 +1,4 @@
+<robot name="academy_robot" xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include filename="$(find academy_robot_description)/urdf/academy_robot_base.urdf.xacro" />
+  <xacro:include filename="$(find academy_robot_description)/urdf/ur_gripper.urdf.xacro" />
+</robot>

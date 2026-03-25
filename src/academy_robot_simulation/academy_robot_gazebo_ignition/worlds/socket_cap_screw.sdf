@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="socket_cap_screw">
+    <static>false</static>
+    <link name="link">
+      <pose frame="">1.0 0.0 0.0 0 0 0</pose>
+      <inertial>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>5e-8</ixx>
+          <iyy>5e-8</iyy>
+          <izz>2e-8</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://academy_robot_gazebo_ignition/meshes/socket_cap_screw.stl</uri>
+            <scale>0.03 0.03 0.06</scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <bullet>
+              <friction>0.9</friction>
+              <friction2>0.8</friction2>
+            </bullet>
+          </friction>
+          <contact>
+            <bullet/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://academy_robot_gazebo_ignition/meshes/socket_cap_screw.stl</uri>
+            <scale>0.03 0.03 0.06</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

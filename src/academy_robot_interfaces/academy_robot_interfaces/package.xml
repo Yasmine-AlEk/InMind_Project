@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model
+  href="http://download.ros.org/schema/package_format3.xsd"
+  schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>academy_robot_interfaces</name>
+  <version>1.0.0</version>
+  <description>Metapackage of message definitions for the Academy Robot stack</description>
+  <maintainer email="jad.elhajj@inmind.ai">Jad El Hajj</maintainer>
+  <license>Apache-2.0</license>
+  <author email="jad.elhajj@inmind.ai">Jad El Hajj</author>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>builtin_interfaces</exec_depend>
+  <exec_depend>academy_robot_battery_msgs</exec_depend>
+  <exec_depend>academy_robot_common_msgs</exec_depend>
+  <exec_depend>robotnik_controllers_msgs</exec_depend>
+  <exec_depend>academy_robot_io_msgs</exec_depend>
+  <exec_depend>academy_robot_navigation_msgs</exec_depend>
+  <exec_depend>academy_robot_safety_msgs</exec_depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

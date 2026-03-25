@@ -1,0 +1,4 @@
+int32[] addresses
+---
+academy_robot_common_msgs/Response response
+Register[] registers

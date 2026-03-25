@@ -1,0 +1,15 @@
+# Default initial positions for academy_robot_arm's ros2_control fake system
+
+initial_positions:
+  robot_arm_elbow_joint: 0
+  robot_arm_shoulder_lift_joint: 0
+  robot_arm_shoulder_pan_joint: 0
+  robot_arm_wrist_1_joint: 0
+  robot_arm_wrist_2_joint: 0
+  robot_arm_wrist_3_joint: 0
+  robotiq_85_left_finger_tip_joint: 0
+  robotiq_85_left_inner_knuckle_joint: 0
+  robotiq_85_left_knuckle_joint: 0
+  robotiq_85_right_finger_tip_joint: 0
+  robotiq_85_right_inner_knuckle_joint: 0
+  robotiq_85_right_knuckle_joint: 0
