@@ -23,28 +23,6 @@ This gives a reliable end-to-end demo, even though it is not a full grasp-lift-t
 
 ---
 
-## Workspace and Environment
-
-### Host workspace
-`~/academy_robotics-main/ros2_academy_ws`
-
-### Docker workspace
-`/home/user/ros2_ws`
-
-### Main packages used
-- `academy_robot_pick_place`
-- `academy_robot_interfaces`
-- `academy_robot_moveit_config`
-- `academy_robot_gazebo_ignition`
-
-### Important simulation resources
-- `launch/spawn_world.launch.py`
-- `launch/spawn_robot.launch.py`
-- `meshes/socket_cap_screw.stl`
-- `worlds/socket_cap_screw.sdf`
-
----
-
 ## Repository Structure
 
 ### `academy_robot_pick_place`
