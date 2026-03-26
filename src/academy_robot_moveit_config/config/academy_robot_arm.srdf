@@ -19,6 +19,7 @@
         <joint name="robotiq_85_right_finger_joint"/>
         <joint name="robotiq_85_right_finger_tip_joint"/>
     </group>
+
     <group name="ur_arm">
         <link name="robot_arm_wrist_3_link"/>
         <link name="robot_arm_wrist_2_link"/>
@@ -29,6 +30,7 @@
         <link name="robot_arm_base_link_inertia"/>
         <link name="robot_arm_base_link"/>
     </group>
+
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="open" group="hand">
         <joint name="robotiq_85_left_finger_tip_joint" value="0"/>
@@ -38,6 +40,7 @@
         <joint name="robotiq_85_right_inner_knuckle_joint" value="0"/>
         <joint name="robotiq_85_right_knuckle_joint" value="0"/>
     </group_state>
+
     <group_state name="close" group="hand">
         <joint name="robotiq_85_left_finger_tip_joint" value="-0.8"/>
         <joint name="robotiq_85_left_inner_knuckle_joint" value="0.8"/>
@@ -46,10 +49,31 @@
         <joint name="robotiq_85_right_inner_knuckle_joint" value="-0.8"/>
         <joint name="robotiq_85_right_knuckle_joint" value="-0.8"/>
     </group_state>
+
+    <group_state name="pregrasp" group="ur_arm">
+        <joint name="robot_arm_shoulder_pan_joint" value="-0.0004957973938837506"/>
+        <joint name="robot_arm_shoulder_lift_joint" value="-1.5678477145837701"/>
+        <joint name="robot_arm_elbow_joint" value="0.001580556671328057"/>
+        <joint name="robot_arm_wrist_1_joint" value="-1.5662361584800935"/>
+        <joint name="robot_arm_wrist_2_joint" value="0.0035327250396668093"/>
+        <joint name="robot_arm_wrist_3_joint" value="-4.441914138749026e-07"/>
+    </group_state>
+
+    <group_state name="place_pregrasp" group="ur_arm">
+        <joint name="robot_arm_shoulder_pan_joint" value="0.12"/>
+        <joint name="robot_arm_shoulder_lift_joint" value="-1.5678477145837701"/>
+        <joint name="robot_arm_elbow_joint" value="0.001580556671328057"/>
+        <joint name="robot_arm_wrist_1_joint" value="-1.5662361584800935"/>
+        <joint name="robot_arm_wrist_2_joint" value="0.0035327250396668093"/>
+        <joint name="robot_arm_wrist_3_joint" value="-4.441914138749026e-07"/>
+    </group_state>
+
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="hand" parent_link="robot_arm_tool0" group="hand"/>
+
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="robot_top_cover" child_link="robot_arm_base_link"/>
+
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="robot_arm_base_link_inertia" link2="robot_arm_forearm_link" reason="Never"/>
     <disable_collisions link1="robot_arm_base_link_inertia" link2="robot_arm_shoulder_link" reason="Adjacent"/>

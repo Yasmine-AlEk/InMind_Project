@@ -1,0 +1,9 @@
+geometry_msgs/PoseStamped target_pose
+geometry_msgs/PoseStamped place_pose
+string object_id
+---
+bool success
+int64 planning_time_ms
+int64 execution_time_ms
+---
+string current_stage
